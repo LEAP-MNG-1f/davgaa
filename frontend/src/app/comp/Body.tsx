@@ -77,8 +77,8 @@ const Body = () => {
           </div>
           <div></div>
         </div>
-        <div></div>
-        <div></div>
+        <div>rthhwf</div>
+        <div>wefwef</div>
       </div>
     </div>
   );
