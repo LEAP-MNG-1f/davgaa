@@ -22,7 +22,7 @@ const Footer = () => {
             Нүүр
           </div>
           <div className="text-white underline underline-offset-2 font-bold hover:text-[] text-[16px]">
-            Холбоо барихs
+            Холбоо барих
           </div>
           <div className="text-white underline underline-offset-2 font-bold hover:text-[] text-[16px]">
             Хоолны цэс
@@ -54,6 +54,7 @@ const Footer = () => {
           <div className="text-white">
             Зохиогчийн эрх хуулиар хамгаалагдсан.
           </div>
+          <div>sasd</div>
         </div>
       </div>
     </div>
