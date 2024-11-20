@@ -13,6 +13,7 @@
     "@emotion/style": "^0.8.0",
     "@emotion/styled": "^11.13.0",
     "@googlemaps/react-wrapper": "^1.1.42",
+    "@mui/base": "^5.0.0-beta.61",
     "@mui/icons-material": "^6.1.7",
     "@mui/material": "^6.1.7",
     "@mui/styled-engine-sc": "^6.1.7",
