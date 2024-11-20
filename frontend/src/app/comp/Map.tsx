@@ -1,12 +1,10 @@
-"use client";
-
 import React, { useEffect, useRef } from "react";
 import { PiStarFourFill } from "react-icons/pi";
 import { Loader } from "@googlemaps/js-api-loader";
 
 const Map = () => {
   const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstance = useRef<google.maps.Map | null>(null); 
+  const mapInstance = useRef<google.maps.Map | null>(null);
 
   useEffect(() => {
     const initMap = async () => {
@@ -33,11 +31,10 @@ const Map = () => {
 
     initMap();
   }, []);
-
   return (
     <div className="flex justify-center pt-[61px]">
       <div className="flex flex-col gap-10 pb-10">
-        <div className="  ">
+        <div className="w-[1200px] h-[616px] border border-black rounded-xl flex items-center justify-center p ">
           <div
             ref={mapRef}
             className="w-full h-[616px] border border-black rounded-xl flex items-center justify-center"
