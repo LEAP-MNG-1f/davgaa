@@ -1,15 +1,16 @@
-import React from "react";
-// ------------------------
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
 import { FaCartArrowDown } from "react-icons/fa";
 import Badge, { BadgeProps } from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import { BiChevronLeft } from "react-icons/bi";
 import { GrAdd } from "react-icons/gr";
 import { FiMinus } from "react-icons/fi";
-import { useState } from "react";
+
 import { GoX } from "react-icons/go";
 import { Drawer } from "@mui/material";
-// ------------------------
+
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   "& .MuiBadge-badge": {
     right: -3,
@@ -18,18 +19,15 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
     padding: "0 4px",
   },
 }));
-// ------------------------
 const Sags = () => {
-  // ------------------------
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (open: boolean) => {
     setOpen(open);
   };
-   // ------------------------
+
   return (
     <div>
-      {/* // ------------------------ */}
       <button onClick={() => toggleDrawer(true)} className="flex gap-3">
         <div>
           <StyledBadge badgeContent={3} color="secondary">
@@ -39,11 +37,10 @@ const Sags = () => {
 
         <div className="text-[18px] font-bold hover:text-[#18BA51]">Сагс</div>
       </button>
-      {/* // ------------------------ */}
+
       <Drawer anchor="right" open={open} onClose={() => toggleDrawer(false)}>
-        <div className="w-[586px] h-screen flex flex-col gap-[500px]">
+        <div className="w-[586px] h-screen flex flex-col gap-[700px]">
           <div className="pl-6 flex flex-col gap-4">
-            {/* // ------------------------ */}
             <div className="flex gap-[178px] pl-6 pt-7 items-center">
               <div>
                 <BiChevronLeft style={{ color: "black", fontSize: "30px" }} />
@@ -55,7 +52,7 @@ const Sags = () => {
                 <div className="w-[245px] h-[150px] border border-black ">
                   photo
                 </div>
-                {/* // ------------------------ */}
+
                 <div>
                   <div className="flex  items-center justify-between">
                     <div>
@@ -91,9 +88,13 @@ const Sags = () => {
               <p className="text-[18px] text-[#5E6166] ">Нийт төлөх дүн</p>
               <p className="text-[18px] text-black">34,800₮</p>
             </div>
-            <div className="w-[256px] h-[48px] bg-[#18BA51] flex justify-center items-center text-white font-normal rounded-md">
+
+            <Link
+              className="w-[256px] h-[48px] bg-[#18BA51] flex justify-center items-center text-white font-normal rounded-md"
+              href={"/zahialga"}
+            >
               Захиалах
-            </div>
+            </Link>
           </div>
         </div>
       </Drawer>

@@ -1,13 +1,14 @@
 import React from "react";
 import Header from "../comp/Header";
 import Footer from "../comp/Footer";
-import Alham1 from "../comp/Alham1";
+
+import Alham from "../comp/Alham";
 
 const page = () => {
   return (
     <div>
       <Header />
-      <Alham1/>
+      <Alham />
       <Footer />
     </div>
   );

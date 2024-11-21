@@ -10,7 +10,7 @@ const HeaderPhoto = () => {
         width: "100%",
         height: "788px",
       }}
-      className="flex justify-center w-screen h-[788px] bg-[#18BA51]"
+      className="flex justify-center w-screen h-[788px] bg-[#18BA51]  "
     >
       <div className="w-[1440px] h-[788px] ">
         <div className="w-[384px]">
