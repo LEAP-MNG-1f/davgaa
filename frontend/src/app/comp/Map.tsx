@@ -1,45 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+
+
 import { PiStarFourFill } from "react-icons/pi";
-import { Loader } from "@googlemaps/js-api-loader";
-
+import MapWorld from "./MapWorld";
 const Map = () => {
-  const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstance = useRef<google.maps.Map | null>(null);
-
-  useEffect(() => {
-    const initMap = async () => {
-      const loader = new Loader({
-        apiKey: "AIzaSyBeK6kNAnqtWp2xZpPHmcXOjESpg5cu6ek",
-        version: "weekly",
-      });
-
-      try {
-        const { Map } = await loader.importLibrary("maps");
-
-        const mapOptions: google.maps.MapOptions = {
-          center: { lat: 47.91996922842304, lng: 106.91756534492119 },
-          zoom: 13,
-        };
-
-        if (mapRef.current && !mapInstance.current) {
-          mapInstance.current = new Map(mapRef.current, mapOptions);
-        }
-      } catch (error) {
-        console.error("Google Maps API-ийг ачаалах үед алдаа гарлаа:", error);
-      }
-    };
-
-    initMap();
-  }, []);
+ 
   return (
     <div className="flex justify-center pt-[61px]">
       <div className="flex flex-col gap-10 pb-10">
-        <div className="w-[1200px] h-[616px] border border-black rounded-xl flex items-center justify-center p ">
-          <div
-            ref={mapRef}
-            className="w-full h-[616px] border border-black rounded-xl flex items-center justify-center"
-          ></div>
-        </div>
+        <MapWorld />
         <div className="flex items-center gap-2">
           <div>
             <PiStarFourFill className="w-8 h-8 text-[#18BA51]" />
