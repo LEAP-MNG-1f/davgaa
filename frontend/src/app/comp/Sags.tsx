@@ -7,7 +7,6 @@ import { styled } from "@mui/material/styles";
 import { BiChevronLeft } from "react-icons/bi";
 import { GrAdd } from "react-icons/gr";
 import { FiMinus } from "react-icons/fi";
-
 import { GoX } from "react-icons/go";
 import { Drawer } from "@mui/material";
 
@@ -34,10 +33,8 @@ const Sags = () => {
             <FaCartArrowDown className="w-7 h-7 hover:text-[#18BA51]" />
           </StyledBadge>
         </div>
-
         <div className="text-[18px] font-bold hover:text-[#18BA51]">Сагс</div>
       </button>
-
       <Drawer anchor="right" open={open} onClose={() => toggleDrawer(false)}>
         <div className="w-[586px] h-screen flex flex-col gap-[700px]">
           <div className="pl-6 flex flex-col gap-4">
@@ -52,7 +49,6 @@ const Sags = () => {
                 <div className="w-[245px] h-[150px] border border-black ">
                   photo
                 </div>
-
                 <div>
                   <div className="flex  items-center justify-between">
                     <div>
@@ -88,7 +84,6 @@ const Sags = () => {
               <p className="text-[18px] text-[#5E6166] ">Нийт төлөх дүн</p>
               <p className="text-[18px] text-black">34,800₮</p>
             </div>
-
             <Link
               className="w-[256px] h-[48px] bg-[#18BA51] flex justify-center items-center text-white font-normal rounded-md"
               href={"/zahialga"}

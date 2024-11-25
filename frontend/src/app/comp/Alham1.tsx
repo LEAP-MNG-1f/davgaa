@@ -1,13 +1,16 @@
 "use client";
 import React from "react";
+import { GoCheck } from "react-icons/go";
 
 const Alham1 = () => {
   return (
     <div className="flex flex-col gap-5">
       <div className="w-[432px] h-[100px] flex  items-center gap-4 pr-20">
-        <div>
-          <div className="w-12 h-12 rounded-[50%] border-2 border-[#0468C8]  flex justify-center items-center">
-            <div className="w-6 h-6 bg-[#0468C8] rounded-[50%] "></div>
+        <div className="  ">
+          <div className="w-12 h-12 rounded-[50%] border-2 border-[#0468C8]   flex justify-center items-center">
+            <div className="w-6 h-6 bg-[#0468C8] rounded-[50%] hover:hidden  ">
+             
+            </div>
           </div>
         </div>
         <div className="flex flex-col">

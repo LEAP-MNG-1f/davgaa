@@ -6,7 +6,7 @@ import HomePage from "./comp/HomePage";
 export default function Home() {
   const fetchData = async () => {
     try {
-      const response = await fetch("https://davgaa.onrender.com");
+      const response = await fetch("http://localhost:8000 ");
       const data = await response.json();
       console.log(data);
     } catch (error) {
