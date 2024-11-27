@@ -35,10 +35,10 @@ const MapWorld = () => {
        initMap();
      }, []);
   return (
-    <div className="w-[1200px] h-[616px] border border-black rounded-xl flex items-center justify-center p ">
+    <div className="w-[1200px] h-[616px] border rounded-xl flex items-center justify-center p ">
       <div
         ref={mapRef}
-        className="w-full h-[616px] border border-black rounded-xl flex items-center justify-center"
+        className="w-full h-[616px] border rounded-xl flex items-center justify-center"
       ></div>
     </div>
   );

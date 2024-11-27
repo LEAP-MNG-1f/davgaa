@@ -56,7 +56,7 @@ const Alham1 = () => {
           </div>
           <div>
             <p>Утасны дугаар*</p>
-            <input type="text" className="h-12 w-[384px] h- bg-[#F7F7F8]" />
+            <input type="number" className="h-12 w-[384px] h- bg-[#F7F7F8]" />
           </div>
           <div>
             <div>Төлбөр төлөх </div>
