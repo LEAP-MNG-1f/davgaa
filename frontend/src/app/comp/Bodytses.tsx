@@ -13,7 +13,7 @@ const Bodytses = () => {
         <div>
           <div className="flex gap-[14px]">
             <div className="w-[280px] h-[43px] rounded-lg border border-[#D6D8DB] text-black text-[18px] hover:text-white hover:bg-[#18BA51] font-medium flex items-center justify-center">
-              Breakfast
+              Breakfast 
             </div>
             <div className="w-[280px] h-[43px] rounded-lg border border-[#D6D8DB] text-black text-[18px] hover:text-white hover:bg-[#18BA51] font-medium flex items-center justify-center">
               Soup

@@ -1,5 +1,5 @@
 import mongoose, { SchemaTypes } from "mongoose";
-const enumprocess = ["sadasd", "wdwedewdz"];
+const enumprocess = ["Breakfast", " Soup ", "Main Course", "Dessert"];
 const orderSchema = new mongoose.Schema({
   orderNumber: {
     type: Number,
@@ -12,11 +12,13 @@ const orderSchema = new mongoose.Schema({
   process: {
     type: String,
     enum: enumprocess,
+    default: "progress",
     required: true,
   },
   createDate: {
     type: Date,
-    required: true,
+    default: () => Date.now(),
+    immutable: true,
   },
   district: {
     type: String,
@@ -31,12 +33,12 @@ const orderSchema = new mongoose.Schema({
     required: true,
   },
   customer: {
-    type: SchemaTypes.ObjectId,
+    type: mongoose.SchemaTypes.ObjectId,
     ref: "User",
     required: true,
   },
   food: {
-    type: SchemaTypes.ObjectId,
+    type: mongoose.SchemaTypes.ObjectId,
     ref: "food",
     required: true,
   },

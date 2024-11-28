@@ -10,20 +10,16 @@ const foodSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  process: {
-    type: String,
-    required: true,
-  },
   ingeredient: {
     type: Date,
     required: true,
   },
   price: {
-    type: String,
+    type: Number,
     required: true,
   },
   category: {
-    type: SchemaTypes.ObjectId,
+    type: mongoose.SchemaTypes.ObjectId,
     ref: "category",
     required: true,
   },
