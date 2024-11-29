@@ -1,6 +1,6 @@
 import React from "react";
 
-const Alham2 = () => {
+const Step2 = () => {
   return (
     <div className="flex flex-col gap-5">
       <div className="w-[432px] h-[100px] flex  items-center gap-4 pr-20 px-2 py-2">
@@ -49,20 +49,4 @@ const Alham2 = () => {
   );
 };
 
-export default Alham2;
-
-<div className="flex gap-4">
-  <div className="w-[245px] h-[150px] border border-black ">photo</div>
-
-  <div>
-    <div className="flex  items-center justify-between">
-      <div>
-        <div className="text-[18px] font-bold">Main Pizza</div>
-        <div className="text-[18px] font-bold text-[#18BA51]">34,800₮</div>
-      </div>
-    </div>
-    <div className="w-[245px] h-[54px]  rounded-sm text-[16px] text-[#767676] px-1  ">
-      Хулуу, төмс, лууван ,сонгино, цөцгийн тос, самрын үр
-    </div>
-  </div>
-</div>;
+export default Step2;

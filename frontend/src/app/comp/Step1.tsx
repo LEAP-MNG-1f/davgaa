@@ -2,7 +2,7 @@
 import React from "react";
 import { GoCheck } from "react-icons/go";
 
-const Alham1 = () => {
+const Step1 = () => {
   return (
     <div className="flex flex-col gap-5">
       <div className="w-[432px] h-[100px] flex  items-center gap-4 pr-20">
@@ -77,4 +77,4 @@ const Alham1 = () => {
   );
 };
 
-export default Alham1;
+export default Step1;

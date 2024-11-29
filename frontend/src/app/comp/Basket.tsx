@@ -18,7 +18,7 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
     padding: "0 4px",
   },
 }));
-const Sags = () => {
+const Basket = () => {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (open: boolean) => {
@@ -97,4 +97,4 @@ const Sags = () => {
   );
 };
 
-export default Sags;
+export default Basket;

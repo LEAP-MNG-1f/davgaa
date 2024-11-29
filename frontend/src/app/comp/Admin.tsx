@@ -4,7 +4,7 @@ import { CgMathPlus } from "react-icons/cg";
 
 import { PiStarFourFill } from "react-icons/pi";
 
-import Cardd from "./Cardd";
+import Cardd from "./CardMini";
 import AdminAdd from "./AdminAdd";
 import Admincat from "./Admincat";
 const Admin = () => {

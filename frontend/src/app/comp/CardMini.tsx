@@ -8,7 +8,7 @@ type CardPropsType = {
   imageUrl?: string;
 };
 
-const Cardd = () => {
+const CardMini = () => {
   return (
     <div>
       <div className="w-[282px] h-[256px] flex flex-col gap-[14px]">
@@ -30,4 +30,4 @@ const Cardd = () => {
   );
 };
 
-export default Cardd;
+export default CardMini;

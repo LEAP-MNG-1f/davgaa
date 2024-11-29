@@ -3,7 +3,7 @@ import { IoBookOutline } from "react-icons/io5";
 import { FaRegClock } from "react-icons/fa6";
 import { PiBowlFoodFill } from "react-icons/pi";
 
-const Deed4 = () => {
+const Frame = () => {
   return (
     <div>
       <div className="flex gap-[47px]">
@@ -58,6 +58,6 @@ const Deed4 = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Deed4
+export default Frame;

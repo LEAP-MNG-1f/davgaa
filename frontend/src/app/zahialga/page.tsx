@@ -2,13 +2,14 @@ import React from "react";
 import Header from "../comp/Header";
 import Footer from "../comp/Footer";
 
-import Alham from "../comp/Alham";
+import { Step } from "@mui/material";
+import MainStep from "../comp/MainStep";
 
 const page = () => {
   return (
     <div>
       <Header />
-      <Alham />
+      <MainStep />
       <Footer />
     </div>
   );

@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "./Header";
-import HeaderPhoto from "./HeaderPhoto";
 import Body from "./Body";
 import Footer from "./Footer";
+import Desktop from "./Desktop";
 
 const HomePage = () => {
   return (
     <div>
       <Header />
-      <HeaderPhoto />
+      <Desktop />
       <Body />
       <Footer />
     </div>

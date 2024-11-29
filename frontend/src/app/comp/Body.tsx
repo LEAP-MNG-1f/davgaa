@@ -3,13 +3,14 @@ import React from "react";
 import { PiStarFourFill } from "react-icons/pi";
 
 import Card from "./Card";
-import Deed4 from "./Deed4";
+
+import Frame from "./Frame";
 
 const Body = () => {
   return (
     <div className="flex justify-center pt-24">
       <div>
-        <Deed4 />
+        <Frame />
 
         <div className="flex flex-col gap-[24px] pt-[60px] pb-[80px]">
           <div className="flex gap-2">
