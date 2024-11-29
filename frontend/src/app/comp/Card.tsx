@@ -28,7 +28,7 @@ const Card = () => {
   return (
       <div className="flex gap-[24px]">
             <div onClick={handleOpen}>
-              <Cardd price={5000} name="zairmag" />
+              <Cardd  />
             </div>
             <Modal
               open={open}

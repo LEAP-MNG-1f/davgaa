@@ -5,6 +5,8 @@ import { CgMathPlus } from "react-icons/cg";
 import { PiStarFourFill } from "react-icons/pi";
 
 import Cardd from "./Cardd";
+import AdminAdd from "./AdminAdd";
+import Admincat from "./Admincat";
 const Admin = () => {
   return (
     <div className="flex justify-center">
@@ -39,7 +41,7 @@ const Admin = () => {
             <div>
               <CgMathPlus />
             </div>
-            <div className="text-[#5E6166] font-bold">Create new category</div>
+            <Admincat />
           </div>
         </div>
       </div>
@@ -51,15 +53,13 @@ const Admin = () => {
             </div>
             <div className="text-[22px] font-bold">Үндсэн хоол</div>
           </div>
-          <div className="w-[130px] h-[35px] bg-[#18BA51] text-white font-medium rounded-lg flex justify-center items-center">
-            Add new food
-          </div>
+          <AdminAdd />
         </div>
         <div className="flex gap-[24px]">
-          <Cardd price={5000} name="zairmag" />
-          <Cardd price={5000} name="zairmag" />
-          <Cardd price={5000} name="zairmag" />
-          <Cardd price={5000} name="zairmag" />
+          <Cardd />
+          <Cardd />
+          <Cardd />
+          <Cardd />
         </div>
       </div>
     </div>
