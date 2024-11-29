@@ -1,46 +1,33 @@
-import React from "react";
-
-import { PiStarFourFill } from "react-icons/pi";
-
-import Card from "./Card";
+import React, { useEffect, useState } from "react";
 
 import Frame from "./Frame";
+import GroupFoods from "./GroupFoods";
 
 const Body = () => {
+  const [groupedFoods, setGroupedFoods] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/foods`
+        );
+        const data = await response.json();
+        console.log("data data:", data.data);
+        setGroupedFoods(data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="flex justify-center pt-24">
       <div>
         <Frame />
-
-        <div className="flex flex-col gap-[24px] pt-[60px] pb-[80px]">
-          <div className="flex gap-2">
-            <div>
-              <PiStarFourFill className="w-8 h-8 text-[#18BA51] " />
-            </div>
-            <div className="text-[22px] font-bold">Үндсэн хоол</div>
-          </div>
-          <Card />
-        </div>
-
-        <div className="flex flex-col gap-[24px] pt-[60px] pb-[80px]">
-          <div className="flex gap-2">
-            <div>
-              <PiStarFourFill className="w-8 h-8 text-[#18BA51] " />
-            </div>
-            <div className="text-[22px] font-bold">Салад ба зууш</div>
-          </div>
-          <Card />
-        </div>
-
-        <div className="flex flex-col gap-[24px] pt-[60px] pb-[80px]">
-          <div className="flex gap-2">
-            <div>
-              <PiStarFourFill className="w-8 h-8 text-[#18BA51] " />
-            </div>
-            <div className="text-[22px] font-bold">Амттан</div>
-          </div>
-          <Card />
-        </div>
+        {
+          groupedFoods.map((d,i)=><GroupFoods key={i} groupFood={d}/>)
+        }
       </div>
     </div>
   );

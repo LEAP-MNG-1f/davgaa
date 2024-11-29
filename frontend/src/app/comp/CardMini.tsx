@@ -1,14 +1,8 @@
 import React from "react";
 import CardMedia from "@mui/material/CardMedia";
 import CardActionArea from "@mui/material/CardActionArea";
-
-type CardPropsType = {
-  name: string;
-  price: number;
-  imageUrl?: string;
-};
-
-const CardMini = () => {
+import { Food } from "@/lib/types";
+const CardMini = ({food}:{food:Food}) => {
   return (
     <div>
       <div className="w-[282px] h-[256px] flex flex-col gap-[14px]">
@@ -16,14 +10,15 @@ const CardMini = () => {
           <CardActionArea>
             <CardMedia
               component="img"
+              src={food.image}
               alt=""
               className="w-[282px] h-[186px] rounded-2xl"
             />
           </CardActionArea>
         </div>
         <div>
-          <div className="text-[18px] font-bold"></div>
-          <div className="text-[18px] text-[#18BA51] font-bold"></div>
+          <div className="text-[18px] font-bold">{food.name}</div>
+          <div className="text-[18px] text-[#18BA51] font-bold">{food.price}</div>
         </div>
       </div>
     </div>

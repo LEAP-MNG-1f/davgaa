@@ -5,6 +5,7 @@ import Modal from "@mui/material/Modal";
 import { GrAdd } from "react-icons/gr";
 import { FiMinus } from "react-icons/fi";
 import CardMini from "./CardMini";
+import { Food } from "@/lib/types";
 
 const style = {
   position: "absolute",
@@ -18,14 +19,14 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-const Card = () => {
+const Card = ({ food }: { food: Food }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
-    <div className="flex gap-[24px]">
+    <div className="flex gap-[24px] w-[300px] flex-shrink-0">
       <div onClick={handleOpen}>
-        <CardMini />
+        <CardMini food={food} />
       </div>
       <Modal
         open={open}
@@ -35,18 +36,18 @@ const Card = () => {
       >
         <Box sx={style}>
           <div className="flex items-center justify-center gap-[33px]">
-            <div className="w-[500px] h-[500px] border border-black">photo</div>
+            <img src={food.image} alt="" className="w-[500px] h-[500px] " />
             <div className="w-[384px] h-[398px] flex flex-col gap-[32px]">
               <div>
-                <div className="text-[28px] font-bold">Main Pizza </div>
+                <div className="text-[28px] font-bold">{food.name} </div>
                 <div className="text-[18px] font-bold text-[#18BA51]">
-                  34,800₮
+                  {food.price}
                 </div>
               </div>
               <div>
                 <div className="text-[18px] font-bold ">Орц</div>
-                <div className="w-[368px] h-[54px] bg-[#F6F6F6] rounded-sm text-[16px] text-[#767676] px-3  ">
-                  Хулуу, төмс, лууван , сонгино, цөцгийн тос, самрын үр
+                <div className="w-[368px] h-[54px] text-black rounded-sm text-[16px]  px-3  ">
+                  {food.ingredient}
                 </div>
               </div>
               <div className="text-[18px] font-bold">Тоо</div>

@@ -42,7 +42,7 @@ const Admincat = () => {
             </div>
             <div className=" h-[132px] p-4">
               <div className="w-[539px] h-[84px] flex flex-col gap-1">
-                <p>Хоолны нэр</p>
+                <p> Category name</p>
                 <input
                   type="text"
                   className="w-[539px] h-[56px] bg-[#F4F4F4] rounded-lg"
