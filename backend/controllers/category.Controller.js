@@ -1,20 +1,32 @@
 import { category } from "../model/category.js";
 
-const createCategory = async (req, res) => {
-  const result = await category.create({
-    name: "",
-  });
-  res.json({
-    succes: true,
-    data: result,
-  });
+const createCategory = async (request, response) => {
+  try {
+    const result = await category.create({
+      name: "Үндсэн хоол",
+    });
+    response.json({
+      succes: true,
+      data: result,
+    });
+    console.log(category);
+    
+  } catch (e) {
+    console.log("Create category data failed");
+  }
 };
-const getAllCategory = async (req, response) => {
-  const result = await category.find();
 
-  response.json({
-    succes: true,
-    data: result,
-  });
+const getAllCategory = async (request, response) => {
+  try {
+    const result = await category.find();
+
+    response.json({
+      succes: true,
+      data: result,
+    });
+  } catch (e) {
+    console.log("Fetch category in failed");
+  }
 };
-export { createCategory, getAllCategory };
+
+export { getAllCategory, createCategory };

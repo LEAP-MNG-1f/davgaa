@@ -1,9 +1,8 @@
-import mongoose, { SchemaTypes } from "mongoose";
-
+import mongoose from "mongoose";
 
 const foodSchema = new mongoose.Schema({
   name: {
-    type: Number,
+    type: String,
     required: true,
   },
   image: {
@@ -11,7 +10,7 @@ const foodSchema = new mongoose.Schema({
     required: true,
   },
   ingeredient: {
-    type: Date,
+    type: String,
     required: true,
   },
   price: {

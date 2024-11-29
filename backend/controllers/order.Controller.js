@@ -1,30 +1,45 @@
 import { Order } from "../model/order.js";
 
-const createOrder = async (req, res) => {
-  const result = await Order.create({});
-  res.json({
-    succes: true,
-    data: result,
-  });
-};
-const getAllOrder = async (req, res) => {
-  const result = await Order.find().populate("customer").populate("food");
-
-  res.json({
-    succes: true,
-    data: result,
-  });
-
-  
-  const updateOrder = async (req, res) => {
-    const result = await Order.findByIdAndUpdate({
-      _id: "",
+const createOrder = async (request, response) => {
+  try {
+    const result = await Order.create({
+      orderNumber: "1",
+      totalPrise: "21000",
+      customer: "6749285f66c660974f3ad9c9",
+      district: "Баянзүрх дүүрэг",
+      food: "674928a79ca6d431736237c9",
+      khoroo: "3-р хороо",
+      apartment: "Нархан хотхон",
+      createDate: new Date(),
+     
+      
+      phoneNumber: "9888848",
+      detail: "erevrv",
     });
-
-    res.json({
-      success: true,
+    response.json({
+      succes: true,
       data: result,
     });
-  };
+  } catch (e) {
+    console.log("Create order data faild");
+    return response.json({
+      succes: false,
+      data: e,
+    });
+  }
 };
-export { createOrder, getAllOrder, };
+
+const getAllOrders = async (request, response) => {
+  try {
+    const result = await Order.find().populate("User").populate("food");
+
+    response.json({
+      succes: true,
+      data: result,
+    });
+  } catch (e) {
+    console.log("fetch order in failed");
+  }
+};
+
+export { getAllOrders, createOrder };

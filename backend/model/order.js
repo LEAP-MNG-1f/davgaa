@@ -1,23 +1,27 @@
-import mongoose, { SchemaTypes } from "mongoose";
+import mongoose from "mongoose";
 const enumprocess = ["Breakfast", " Soup ", "Main Course", "Dessert"];
+const enumpay = ["cash", "card"];
 const orderSchema = new mongoose.Schema({
   orderNumber: {
     type: Number,
     required: true,
   },
   totalPrise: {
-    type: String,
+    type: Number,
     required: true,
   },
   process: {
     type: String,
     enum: enumprocess,
-    default: "progress",
-    required: true,
+    default: "Main Course",
+  },
+  paymentType: {
+    type: String,
+    enum: enumpay,
+    default: "cash",
   },
   createDate: {
     type: Date,
-    default: () => Date.now(),
     immutable: true,
   },
   district: {
@@ -40,6 +44,14 @@ const orderSchema = new mongoose.Schema({
   food: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "food",
+    required: true,
+  },
+  phoneNumber: {
+    type: String,
+    required: true,
+  },
+  detail: {
+    type: String,
     required: true,
   },
 });
