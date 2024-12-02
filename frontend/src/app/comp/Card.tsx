@@ -41,7 +41,7 @@ const Card = ({ food }: { food: Food }) => {
               <div>
                 <div className="text-[28px] font-bold">{food.name} </div>
                 <div className="text-[18px] font-bold text-[#18BA51]">
-                  {food.price}
+                  {food.price}₮
                 </div>
               </div>
               <div>

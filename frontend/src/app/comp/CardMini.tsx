@@ -18,7 +18,9 @@ const CardMini = ({food}:{food:Food}) => {
         </div>
         <div>
           <div className="text-[18px] font-bold">{food.name}</div>
-          <div className="text-[18px] text-[#18BA51] font-bold">{food.price}</div>
+          <div className="text-[18px] text-[#18BA51] font-bold">
+            {food.price}₮
+          </div>
         </div>
       </div>
     </div>
