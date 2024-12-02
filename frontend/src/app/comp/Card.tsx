@@ -46,8 +46,8 @@ const Card = ({ food }: { food: Food }) => {
               </div>
               <div>
                 <div className="text-[18px] font-bold ">Орц</div>
-                <div className="w-[368px] h-[54px] text-black rounded-sm text-[16px]  px-3  ">
-                  {food.ingredient}
+                <div className="w-[368px] h-[54px] text-black rounded-sm text-[16px] bg-[#F6F6F6]  px-3 ">
+                  {food.ingeredient}
                 </div>
               </div>
               <div className="text-[18px] font-bold">Тоо</div>
