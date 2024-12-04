@@ -55,12 +55,6 @@ const Admin = () => {
           </div>
           <AdminAdd />
         </div>
-        <div className="flex gap-[24px]">
-          <Cardd />
-          <Cardd />
-          <Cardd />
-          <Cardd />
-        </div>
       </div>
     </div>
   );
