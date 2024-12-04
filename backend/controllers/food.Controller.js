@@ -7,7 +7,7 @@ const createFood = async (request, response) => {
       price: "950339",
       image:
         "https://s23209.pcdn.co/wp-content/uploads/2019/04/Mexican-Street-TacosIMG_9091.jpg",
-      category: "6749670517254f4ba474a020",
+      category: "67496be1a95cb44795eccb1c",
       ingeredient: "Хулуу, төмс, лууван , сонгино, цөцгийн тос, самрын үр ",
     });
 

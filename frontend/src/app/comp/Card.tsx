@@ -6,6 +6,12 @@ import { GrAdd } from "react-icons/gr";
 import { FiMinus } from "react-icons/fi";
 import CardMini from "./CardMini";
 import { Food } from "@/lib/types";
+import Dialog from "@mui/material/Dialog";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import { ListItem, ListItemButton, ListItemText } from "@mui/material";
+
+
 
 const style = {
   position: "absolute",
@@ -19,7 +25,14 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+
 const Card = ({ food }: { food: Food }) => {
+  const handleAddToCart = () => {
+    const existingCart = JSON.parse(localStorage.getItem("basket") || "[]");
+    const updatedCart = [...existingCart, food];
+    localStorage.setItem("basket", JSON.stringify(updatedCart));
+  };
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -41,7 +54,7 @@ const Card = ({ food }: { food: Food }) => {
               <div>
                 <div className="text-[28px] font-bold">{food.name} </div>
                 <div className="text-[18px] font-bold text-[#18BA51]">
-                  {food.price}₮
+                  {food.price.toLocaleString()}₮
                 </div>
               </div>
               <div>
@@ -60,9 +73,13 @@ const Card = ({ food }: { food: Food }) => {
                   <GrAdd className="font-bold text-white w-5 h-5" />
                 </div>
               </div>
-              <div className="w-[384px] h-[48px] bg-[#18BA51] rounded-sm justify-center text-white items-center flex">
+
+              <button
+                className="w-[384px] h-[48px] bg-[#18BA51] rounded-sm justify-center text-white items-center flex"
+                onClick={handleAddToCart}
+              >
                 Сагслах
-              </div>
+              </button>
             </div>
           </div>
         </Box>
