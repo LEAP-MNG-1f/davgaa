@@ -3,6 +3,9 @@ import React from "react";
 import { CgProfile } from "react-icons/cg";
 import Link from "next/link";
 
+
+import Basket from "./Basket";
+
 const Header = () => {
   return (
     <div className="flex justify-center">
@@ -30,15 +33,21 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex gap-6 items-center">
-          <input className="w-[260px] h-[40px] border border-black rounded-lg "></input>
+          {/* <input className="w-[260px] h-[40px] border border-black rounded-lg "></input> */}
+
+          <Basket />
 
           <div className="flex gap-3">
             <div>
               <CgProfile className="w-7 h-7" />
             </div>
-            <div className="text-[18px] font-bold hover:text-[#18BA51]">
+
+            <Link
+              className="text-[18px] font-bold hover:text-[#18BA51]"
+              href={"/logn"}
+            >
               Нэвтрэх
-            </div>
+            </Link>
           </div>
         </div>
       </div>

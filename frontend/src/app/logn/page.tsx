@@ -1,13 +1,15 @@
 "use client";
 import React from "react";
 import Header from "../comp/Header";
-import Admin from "./Admin";
+import Footer from "../comp/Footer";
+import Logn from "./Logn";
 
 const page = () => {
   return (
-    <div>
+    <div className="">
       <Header />
-      <Admin />
+      <Logn />
+      <Footer />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -6,12 +6,6 @@ import { GrAdd } from "react-icons/gr";
 import { FiMinus } from "react-icons/fi";
 import CardMini from "./CardMini";
 import { Food } from "@/lib/types";
-import Dialog from "@mui/material/Dialog";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
-import { ListItem, ListItemButton, ListItemText } from "@mui/material";
-
-
 
 const style = {
   position: "absolute",
@@ -27,6 +21,7 @@ const style = {
 };
 
 const Card = ({ food }: { food: Food }) => {
+  const [count, setCount] = useState(1);
   const handleAddToCart = () => {
     const existingCart = JSON.parse(localStorage.getItem("basket") || "[]");
     const updatedCart = [...existingCart, food];
@@ -36,6 +31,12 @@ const Card = ({ food }: { food: Food }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const countAdd = (number: number) => {
+    const addNumber = count + number;
+    setCount(addNumber);
+  };
+
   return (
     <div className="flex gap-[24px] w-[300px] flex-shrink-0">
       <div onClick={handleOpen}>
@@ -65,17 +66,20 @@ const Card = ({ food }: { food: Food }) => {
               </div>
               <div className="text-[18px] font-bold">Тоо</div>
               <div className="flex gap-5">
-                <div className="w-[45px] h-[40px] rounded-xl bg-[#18BA51] flex justify-center items-center">
+                <button className="w-[45px] h-[40px] rounded-xl bg-[#18BA51] flex justify-center items-center">
                   <FiMinus className="font-bold text-white w-5 h-5" />
-                </div>
-                <div className="w-[254px] font-bold text-center">1</div>
-                <div className="w-[45px] h-[40px] rounded-xl bg-[#18BA51] flex justify-center items-center">
-                  <GrAdd className="font-bold text-white w-5 h-5" />
-                </div>
+                </button>
+                <div className="w-[254px] font-bold text-center">{count}</div>
+                <button className="w-[45px] h-[40px] rounded-xl bg-[#18BA51] flex justify-center items-center">
+                  <GrAdd
+                    onClick={() => countAdd(1)}
+                    className="font-bold text-white w-5 h-5"
+                  />
+                </button>
               </div>
 
               <button
-                className="w-[384px] h-[48px] bg-[#18BA51] rounded-sm justify-center text-white items-center flex"
+                className="w-[384px] h-[48px] bg-[#18BA51] hover:bg-[#135a2c]  rounded-sm justify-center text-white items-center flex"
                 onClick={handleAddToCart}
               >
                 Сагслах

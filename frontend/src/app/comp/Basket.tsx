@@ -39,7 +39,7 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   },
 }));
 
-const Basket = ({ food }: { food: Food }) => {
+const Basket = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [open, setOpen] = useState(false);
 
@@ -47,7 +47,7 @@ const Basket = ({ food }: { food: Food }) => {
   useEffect(() => {
     const loadCartFromLocalStorage = () => {
       try {
-        const savedCart = localStorage.getItem("cart");
+        const savedCart = localStorage.getItem("basket");
         if (savedCart) {
           const parsedCart: CartItem[] = JSON.parse(savedCart);
           const cartWithQuantity = parsedCart.map((item) => ({
@@ -58,7 +58,7 @@ const Basket = ({ food }: { food: Food }) => {
         }
       } catch (error) {
         console.error("Error loading cart from localStorage:", error);
-        localStorage.removeItem("cart");
+        localStorage.removeItem("basket");
       }
     };
 
@@ -94,7 +94,7 @@ const Basket = ({ food }: { food: Food }) => {
 
     // Update state and localStorage
     setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    localStorage.setItem("basket", JSON.stringify(updatedCart));
   };
 
   // Remove item from cart
@@ -105,7 +105,7 @@ const Basket = ({ food }: { food: Food }) => {
 
     // Update state and localStorage
     setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    localStorage.setItem("basket", JSON.stringify(updatedCart));
   };
 
   // Update quantity of an item in cart
@@ -118,7 +118,7 @@ const Basket = ({ food }: { food: Food }) => {
 
     // Update state and localStorage
     setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    localStorage.setItem("basket", JSON.stringify(updatedCart));
   };
 
   // Calculate total price
@@ -150,9 +150,9 @@ const Basket = ({ food }: { food: Food }) => {
               {cartItems.length === 0 ? (
                 <p className="flex justify-center p-5">Сагс хоосон байна.</p>
               ) : (
-                cartItems.map((item) => (
+                cartItems.map((item, index) => (
                   <div
-                    key={item._id}
+                    key={index}
                     className="flex mb-4 w-[500px] gap-6 border-b p-4 relative"
                   >
                     <div>
@@ -207,7 +207,7 @@ const Basket = ({ food }: { food: Food }) => {
               </p>
             </div>
             <Link
-              className="w-[256px] h-[48px] bg-[#18BA51] flex justify-center items-center text-white font-normal rounded-md"
+              className="w-[256px] h-[48px] bg-[#18BA51] hover:bg-[#135a2c] flex justify-center items-center text-white font-normal rounded-md"
               href={"/zahialga"}
             >
               Захиалах

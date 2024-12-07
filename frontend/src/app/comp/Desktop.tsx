@@ -12,7 +12,7 @@ const Desktop = () => {
       }}
       className="flex justify-center w-screen h-[788px] bg-[#18BA51]  "
     >
-      <div className="flex items-center justify-between h-full w-[1340px]">
+      <div className="flex items-center justify-between h-full w-[1440px]">
         <div className="flex flex-col gap-6 max-w-[384px]">
           <p className="font-Poppins font-semibold text-white text-[55px] leading-[90%] tracking-[0.55px]">
             Pinecone <br />
